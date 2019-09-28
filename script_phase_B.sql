@@ -76,7 +76,7 @@ SELECT Camping.campName,SUM(Category.unitCost*DATEDIFF(DAY,Rental.startDt,Rental
 WHERE Emplacement.catCode=Category.catCode AND Emplacement.campCode=Rental.campCode AND Emplacement.empNo=Rental.empNo AND Emplacement.campCode=Camping.campCode
 GROUP BY Camping.campName
 
--- Create indexes to speed up the queries
+-- Create indexes to speed up the last two queries : d and e
 
 CREATE INDEX IX_Customer ON Customer(custCode) INCLUDE (custName,custSurname)
 CREATE INDEX IX_Cust_Book ON Booking(custCode,bookDt)
